@@ -10,7 +10,7 @@ import Banner from "../Banner";
 const Contact = () => {
   return (
     <Layout>
-      <Banner title={"Contact"} subTitle={`Home > Contact`} />
+      <Banner title={"Contact"} />
       <HeroContact />
       <ContactForm />
       <Map />

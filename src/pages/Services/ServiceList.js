@@ -3,12 +3,12 @@ import React from "react";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import { useTheme } from '@mui/material/styles';
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const quillStyle = {
-    // fontFamily: 'Arial, sans-serif',
     fontSize: '30rem', 
     padding:{xs:"0rem", sm:"0rem", md:"2rem"},
     fontWeight:"400"
@@ -17,8 +17,7 @@ const quillStyle = {
 
 const ServiceList = ({ image, title, bgColor, description, dire }) => {
     const theme = useTheme();
-    console.log(theme)
-    // const isMatch = useMediaQuery(theme.breakpoints.down(`md`))
+    let navigate = useNavigate()
   return (
     <Box sx={{ width: "100%" }}>
       <Container fixed >
@@ -66,6 +65,7 @@ const ServiceList = ({ image, title, bgColor, description, dire }) => {
             </Typography>
             <ReactQuill theme="bubble" value={description} readOnly={true} style={quillStyle} />
             <Button
+            onClick={()=>{navigate("/contact")}}
               variant="outlined"
               size="large"
               sx={{

@@ -83,7 +83,8 @@ const Team = () => {
            
           </Box>
           <LinearP align = {"left"}/>
-          <Box sx={{width:"100%", display: {sm:"block", md:"flex", justifyContent:"center", alignItems:"center"}}}>
+              
+          <Box sx={{width:"100%", display: {sm:"block", md:"flex", justifyContent:"center", alignItems:"center",}}}>
             {team.map((curElem) => {
               const { image, name, role } = curElem;
               return <TeamCard image={image} title={name} role={role} />;

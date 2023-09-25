@@ -1,70 +1,89 @@
-import { Box, Container, Divider, Typography } from "@mui/material";
+import { Box, Container, Divider, Link, Typography } from "@mui/material";
 import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import PinDropIcon from '@mui/icons-material/PinDrop';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import MarkunreadIcon from '@mui/icons-material/Markunread';
-import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
+import PinDropIcon from "@mui/icons-material/PinDrop";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import MarkunreadIcon from "@mui/icons-material/Markunread";
+import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useNavigate } from "react-router-dom";
 
-const contactinfo = [{
-  icon:<PinDropIcon />,
-  name:"Location",
-  address:"kupondol-5, Lalitpur"
-},
-{
-  icon:<MarkunreadIcon />,
-  name:"Email",
-  address:"msDoftCrystal@gmail.com"
-},
-{
-  icon:<WifiCalling3Icon />,
-  name:"Phone us",
-  address:"1234567890"
-},]
+const contactinfo = [
+  {
+    icon: <PinDropIcon />,
+    name: "Location",
+    address: "kupondol-5, Lalitpur",
+  },
+  {
+    icon: <MarkunreadIcon />,
+    name: "Email",
+    address: "msDoftCrystal@gmail.com",
+  },
+  {
+    icon: <WifiCalling3Icon />,
+    name: "Phone us",
+    address: "1234567890",
+  },
+];
 
 const icon = [
   {
     name: <FacebookIcon />,
+    path:"https://www.facebook.com/MSSoftCrystals"
   },
   {
     name: <InstagramIcon />,
+    path:"https://www.instagram.com/ms_softcrystals"
   },
   {
     name: <TwitterIcon />,
+    path:"https://www.facebook.com/MSSoftCrystals"
   },
   {
     name: <YouTubeIcon />,
+    path:"https://www.tiktok.com/@mssoft123"
+  },
+  {
+    name:<LinkedInIcon />,
+    path:"https://np.linkedin.com/company/ms-softcrystals"
   },
 ];
-const quickLink = [{
-  name:"Home"
-},
-{
-  name:"About Us"
-},
-{
-  name:"Contact"
-},
-{
-  name:"Service"
-},
-{
-  name:"Our Team"
-}]
+const quickLink = [
+  {
+    name: "Home",
+    path:"/"
+  },
+  {
+    name: "About Us",
+    path:"/about"
+  },
+  {
+    name: "Service",
+    path:"/services"
+
+  },
+  {
+    name: "Contact",
+    path:"/contact"
+
+  },
+];
 
 const Footer = () => {
+  let navigate = useNavigate();
+
   return (
     // <Box sx={{position:"relative"}}>
     <Box
       sx={{
-        height: {xs:"162vh", sm:"165vh", md:"60vh"},
+        height: { xs: "110vh", sm: "115vh", md: "60vh" },
         width: "100%",
         margin: "0",
-        background:
-          "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%)",
+        background:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgb(5 5 37) 0%)"
+          // "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%)",
       }}
     >
       <Container fixed>
@@ -72,14 +91,14 @@ const Footer = () => {
           sx={{
             width: "100%",
             display: "flex",
-            justifyContent: "space-around",
-            flexDirection:{xs:"column", sm:"column", md:"row"},
-            flexWrap:"wrap"
+            justifyContent: "space-between",
+            flexDirection: { xs: "column", sm: "column", md: "row" },
+            flexWrap: "wrap",
           }}
         >
           <Box
             sx={{
-              width: {xs:"100%", sm:"100%", md:"25%",},
+              width: { xs: "100%", sm: "100%", md: "34%" },
               // height: "40vh",
               // border: "1px solid white",
               mt: "4rem",
@@ -90,12 +109,12 @@ const Footer = () => {
                 fontSize: "30px",
                 fontWeight: "700",
                 color: "#FFFFFF",
-                p: "0.5rem 0.5rem 0rem 0.5rem",
+                p: "0.5rem 0.5rem 0rem 0!important",
               }}
             >
               MS SOFT
             </Typography>
-            <Typography sx={{ color: "#fff", p: "0.5rem" }}>
+            <Typography sx={{ color: "#fff" }}>
               Completely strategize client-cent Phosfluorescently iterate
               efficient internal or organic.
             </Typography>
@@ -105,7 +124,7 @@ const Footer = () => {
                 fontSize: "20px",
                 fontWeight: "700",
                 color: "#FFFFFF",
-                p: "1rem 0.5rem 0rem 0.5rem",
+                p: "1rem 0.5rem 0rem 0rem",
               }}
             >
               Follow Us
@@ -114,12 +133,14 @@ const Footer = () => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "space-around",
+                // justifyContent: "space-around",
+                gap: "0.5rem",
                 color: "#ffffff",
+                // border:"1px solid red"
               }}
             >
               {icon.map((curElem) => {
-                const { name } = curElem;
+                const { name, path } = curElem;
                 return (
                   <>
                     <Typography
@@ -128,12 +149,20 @@ const Footer = () => {
                         height: "3rem",
                         width: "3rem",
                         backgroundColor: "blue",
-                        display:"flex", justifyContent:"center", alignItems:"center",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
                         m: "1rem 0 1rem 0",
-                        borderRadius:"5px"
+                        borderRadius: "5px",
+                        cursor:"pointer"
                       }}
+
+                      target="_blank"
                     >
+                  
+                      <a href={`${path}`} target="_blank" style={{color:"white"}}>
                       {name}
+                      </ a>
                     </Typography>
                   </>
                 );
@@ -142,10 +171,8 @@ const Footer = () => {
           </Box>
           <Box
             sx={{
-              width:{ xs:"100%", sm:"100%", md:"20%"},
-              // height: "40vh",
-              // border: "1px solid white",
-              mt: {xs:"1rem", md:"4rem"},
+              width: { xs: "100%", sm: "100%", md: "29%" },
+              mt: { xs: "1rem", md: "4rem" },
             }}
           >
             <Typography
@@ -154,101 +181,99 @@ const Footer = () => {
                 fontSize: "20px",
                 fontWeight: "700",
                 color: "#FFFFFF",
-                p: {xs:"0 0 0 0.5rem", sm:"0.5rem",ms:"1rem"},
+                p: { xs: "0 0 0 0.5rem", sm: "0.5rem", ms: "1rem" },
               }}
             >
               Quick Links
             </Typography>
-            <Typography sx={{display:"flex", flexDirection:"column", color:"#fffff"}}>
-
-{quickLink.map((curElem)=>{
-  const {name} = curElem
-  return<>
-                <Typography sx={{display:"flex", gap:"1.5rem", color:"white", p:"0.5rem 0 0 1rem"}}>
-              <Typography><ArrowRightAltIcon /></Typography>
-              <Typography>{name}</Typography>
-              </Typography>
-  </>
-})}
-</Typography>
-
-          </Box>
-          <Box
-            sx={{
-              width: {xs:"100%", sm:"100%", md:"27%"},
-              // height: "40vh",
-              // border: "1px solid white",
-              mt: "4rem",
-            }}
-          >
             <Typography
-              sx={{
-                // textAlign: "center",
-                fontSize: "20px",
-                fontWeight: "700",
-                color: "#FFFFFF",
-                p: "1rem",
-              }}
+              sx={{ display: "flex", flexDirection: "column", color: "#fffff" }}
             >
-              Popular Post
+              {quickLink.map((curElem) => {
+                const { name, path } = curElem;
+                return (
+                  <>
+                    <Typography
+                    
+                      sx={{
+                        display: "flex",
+                        gap: "1.5rem",
+                        color: "white",
+                        p: "0.5rem 0 0 0.5rem",
+                      }}
+                    >
+                      <Typography>
+                        <ArrowRightAltIcon />
+                      </Typography>
+                      <Typography sx={{cursor:"pointer"}} onClick={()=>{navigate(`${path}`)}}>{name}</Typography>
+                    </Typography>
+                  </>
+                );
+              })}
             </Typography>
           </Box>
           <Box
             sx={{
-              width:{ xs:"100%", sm:"100%", md:"23%"},
-              // height: "40vh",
-              // border: "1px solid white",
+              width: { xs: "100%", sm: "100%", md: "32%" },
               mt: "4rem",
             }}
           >
             <Typography
               sx={{
-                // textAlign: "center",
                 fontSize: "20px",
                 fontWeight: "700",
                 color: "#FFFFFF",
-                p: "1rem",
               }}
             >
               Contact Info
             </Typography>
 
-                {contactinfo.map((curElem)=>{
-                  const {icon, name, address} = curElem
-                  return <>
-                  
-                  <Box sx={{display:"flex", gap:"1rem", m:"0.5rem"}}>
-              <Typography sx={{height:"3rem", width:"3rem", backgroundColor:"blue", borderRadius:"50%", m:"0.2rem", display:"flex", justifyContent:"center", alignItems:"center", color:"#ffffff"}}>
-                {icon}
-              </Typography>
-              <Typography>
-                
-                <Typography sx={{color:"#ffffff",}}>
-                  {name}
-                </Typography>
-                <Typography sx={{color:"#ffffff",  fontSize:"13px"}}>
-
-                    {address}
-                </Typography>
-              </Typography>
-
-            </Box>
-                  </>
-                })}
-
-
-
+            {contactinfo.map((curElem) => {
+              const { icon, name, address } = curElem;
+              return (
+                <>
+                  <Box sx={{ display: "flex", gap: "1rem", mt: "0.5rem" }}>
+                    <Typography
+                      sx={{
+                        height: "3rem",
+                        width: "3rem",
+                        backgroundColor: "blue",
+                        borderRadius: "50%",
+                        mt: "0.2rem",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "#ffffff",
+                      }}
+                    >
+                      {icon}
+                    </Typography>
+                    <Typography>
+                      <Typography sx={{ color: "#ffffff" }}>{name}</Typography>
+                      <Typography sx={{ color: "#ffffff", fontSize: "16px" }}>
+                        {address}
+                      </Typography>
+                    </Typography>
+                  </Box>
+                </>
+              );
+            })}
           </Box>
         </Box>
         <Divider sx={{ backgroundColor: "#FFFFFF", mt: "0.5rem" }} />
-        <Box sx={{width:"100%", height:"3rem", mt:"1.5rem", display:"flex", justifyContent:"space-between", flexDirection:{xs:"column", sm:"column", md:"row"}}}>
-          <Typography sx={{pl:"1rem", color:"#ffffff"}}>© 2022 Techno.All Rights Reserved.</Typography>
-          <Typography sx={{display:"flex", gap:" 2rem", pr:"1rem", color:"#ffffff", flexWrap:"wrap"}}>
-            <Typography>Privacy Policy</Typography>
-            <Typography>Terms and Condition</Typography>
-            <Typography>Contact Us</Typography>
+        <Box
+          sx={{
+            width: "100%",
+            height: "3rem",
+            mt: "1.5rem",
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: { xs: "column", sm: "column", md: "row" },
+          }}
+        >
+          <Typography sx={{ pl: "0rem", color: "#ffffff" }}>
+            © 2022 Techno.All Rights Reserved.
           </Typography>
-
         </Box>
       </Container>
     </Box>

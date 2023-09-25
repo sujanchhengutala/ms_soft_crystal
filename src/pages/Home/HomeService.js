@@ -45,7 +45,8 @@ const HomeService = () => {
     <Box
       sx={{
         width: "100%",
-        backgroundColor: "#fafafa",
+        backgroundColor:"linear-gradient(90deg, rgb(255 255 255) 0%, rgb(15 165 195) 0%, rgb(58 196 255) 0%)"
+        //  "#fafafa",
       }}
     >
       <Container>

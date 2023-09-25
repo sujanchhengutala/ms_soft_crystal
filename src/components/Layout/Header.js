@@ -1,20 +1,20 @@
 import {
   AppBar,
   Box,
+  Container,
   Tab,
   Tabs,
   Toolbar,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import DrawerComp from "./DrawerComp";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   let pathName = window.location.pathname.split('/')[1]?.toLowerCase().trim();
-  console.log("path  : ",pathName);
   const index =
     pathName === "about"
       ? 1
@@ -29,24 +29,31 @@ const Header = () => {
 
   return (
     <>
-      <Box sx={{ height: "6rem", zIndex: "99999999999999999999" }}>
+      <Box sx={{ height: "6rem", zIndex: "99999999999999999999", width:"100%" }}>
+
         <AppBar
           component={"nav"}
           sx={{
             height: "6rem",
-            background:
-              "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%)",
+            background:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgb(5 5 37) 0%)"
+              // "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%)",
           }}
         >
+
+        <Container fixed  sx={{ paddingLeft:"1px !important", paddingRight:"5px !important"}}>
           <Toolbar
             sx={{
-              mx: { xs: "0.1rem", md: "8rem" },
+              paddingRight:"0px !important",
               my: { xs: "1rem", md: "1rem" },
+              display:"flex",
+              justifyContent:"space-between"
             }}
           >
-            <Typography variant="h5" sx={{ flexGrow: "1" }}>
-              ms soft
-            </Typography>
+
+
+            <Typography component={"img"} src="/images/logo.png" width={"6rem"} height={"4rem"} />
+              {/* ms soft
+            </Typography> */}
             <Box sx={{ display: { xs: "block", sm: "block", md: "flex" } }}>
               {isMatch ? (
                 <DrawerComp />
@@ -84,9 +91,13 @@ const Header = () => {
                 </Tabs>
               )}
             </Box>
+
           </Toolbar>
+        </Container>
         </AppBar>
+
         <Toolbar />
+
       </Box>
     </>
   );

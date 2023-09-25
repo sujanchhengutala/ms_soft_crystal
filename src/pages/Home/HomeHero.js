@@ -1,28 +1,33 @@
 import React from "react";
-import { Box, Button, Container, Typography, useMediaQuery, Divider } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+  Divider,
+} from "@mui/material";
 import { CarouselItems } from "../../data/data.js";
 import Carousel from "react-material-ui-carousel";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Technology from "./Technology.js";
 import { Titem } from "../../data/data.js";
+import { useTheme } from "@mui/material/styles";
 
-import SwiperCore from "swiper";
-import {
+import SwiperCore, {
   Navigation,
   Pagination,
   Autoplay,
   Scrollbar,
   A11y,
-} from "swiper/modules";
+} from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { useTheme } from '@mui/material/styles';
 
 SwiperCore.use([Autoplay]);
 
@@ -35,12 +40,12 @@ const typography = {
 };
 
 const HomeHero = () => {
-  const theme = useTheme()
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"))
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <Box
-        sx={{ width: "100%", height: { xs: "81vh", sm: "85vh", md: "90vh" } }}
+        sx={{ width: "100%", height: { xs: "81vh", sm: "85vh", md: "93vh" } }}
       >
         <Carousel autoPlay="true" stopAutoPlayOnHover={true} indicators={false}>
           {CarouselItems.map((item, i) => {
@@ -100,42 +105,37 @@ const HomeHero = () => {
                         Explore <KeyboardArrowDownIcon />
                       </Button>
                     </Box>
-
                   </Container>
                 </Box>
               </>
             );
           })}
         </Carousel>
-        {/* <Container fixed> */}
-
-                  <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          autoplay={{
-            waitForTransition: true,
-            effect: "Cards",
-            delay: 10,
-            reverseDirection: false,
-            pauseOnMouseEnter: false,
-          }}
-          loop= {true}
-          speed={1000}
-          // pagination={{ clickable: true }}
-          navigation={false}
-          slidesPerView={`${isMatch? 3 : 8}`}
-        >
-          {Titem.map((items, index) => {
-            const {icon} = items 
-            console.log(icon,"sujan sujan sujan")
-            return (
-              <SwiperSlide>
-                <Technology item={icon} index={index} />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        {/* </Container> */}
-
+        <Container fixed>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            autoplay={{
+              waitForTransition: true,
+              // effect: "Cards",
+              delay: 1000,
+              pauseOnMouseEnter: false,
+            }}
+            loop={true}
+            speed={500}
+            // pagination={{ clickable: true }}
+            navigation={false}
+            slidesPerView={`${isMatch ? 3 : 7}`}
+          >
+            {Titem.map((items, index) => {
+              const { icon } = items;
+              return (
+                <SwiperSlide>
+                  <Technology item={icon} index={index} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </Container>
 
         <Divider />
       </Box>

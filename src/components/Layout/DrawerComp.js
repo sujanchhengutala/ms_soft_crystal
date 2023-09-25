@@ -1,24 +1,11 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Drawer,
-  IconButton,
-  Tabs,
-  Tab,
-  Typography,
-  // Divider,
-} from "@mui/material";
+import { Box, Drawer, IconButton, Tabs, Tab, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-// import CloseIcon from "@mui/icons-material/Close";
-
-
 
 const DrawerComp = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [value, setValue] = useState(0);
-
-
 
   return (
     <Box
@@ -39,7 +26,7 @@ const DrawerComp = () => {
           sx={{
             // display: "flex",
             // justifyContent: "space-between",
-            height:"8rem",
+            height: "8rem",
             p: "0.25rem  0.25rem 0 0.25rem",
           }}
         >
@@ -49,19 +36,14 @@ const DrawerComp = () => {
             height="100%"
             width="100%"
           />
-
-          {/* <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-            <CloseIcon />
-          </IconButton> */}
         </Box>
-        {/* <Divider /> */}
         <Box
           sx={{
             // flexGrow: 1,
             bgcolor: "background.paper",
             display: "flex",
             height: 224,
-            width:"100%"
+            width: "100%",
           }}
         >
           <Tabs
@@ -75,30 +57,28 @@ const DrawerComp = () => {
               fontSize: "30px",
               position: "relative",
               float: "right",
-              width:"100%"
+              width: "100%",
             }}
           >
-            <Link to='/'>
-            <Tab label="Home" />
-
+            <Link to="/">
+              <Tab label="Home" />
             </Link>
-            <Link to='/services'>
-            <Tab label="Service" />
-
+            <Link to="/services">
+              <Tab label="Service" />
             </Link>
-            <Link to='/about'>
-            <Tab label="About" />
-
+            <Link to="/about">
+              <Tab label="About" />
             </Link>
-            <Link to='/contact'>
-            <Tab label="Contact" />
-
+            <Link to="/contact">
+              <Tab label="Contact" />
             </Link>
           </Tabs>
         </Box>
       </Drawer>
       <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-        <MenuIcon textColor="white" />
+        <Typography sx={{ color: "white" }}>
+          <MenuIcon />
+        </Typography>
       </IconButton>
     </Box>
   );

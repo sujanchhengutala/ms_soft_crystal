@@ -6,7 +6,7 @@ const Banner = ({title, subTitle}) => {
     <Box
     sx={{
       // backgroundImage: "url(./images/banner.jpg)",
-      background:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%)",
+      background:"linear-gradient(90deg, rgb(255 255 255) 0%, rgb(15 165 195) 0%, rgb(58 196 255) 0%)",
       height: "40vh",
       width: "100%",
       backgroundRepeat: "no-repeat",
@@ -21,7 +21,7 @@ const Banner = ({title, subTitle}) => {
   >
     {/* <Typography sx={{color:"#ffffff", fontSize:"20px", fontWeight:"600", textAlign:"center",zIndex:'9999' }}>{number}</Typography> */}
     <Typography sx={{color:"#ffffff", fontSize:"40px", fontWeight:"600", textAlign:"center",zIndex:'9999', lineHeight:"2.5rem" }}>{title}</Typography>
-    <Typography sx={{color:"#ffffff", fontSize:"20px", fontWeight:"600", textAlign:"center",zIndex:'9999', pt:"1rem" }}>{subTitle}</Typography>
+    {/* <Typography sx={{color:"#ffffff", fontSize:"20px", fontWeight:"600", textAlign:"center",zIndex:'9999', pt:"1rem" }}>{subTitle}</Typography> */}
   </Box>
   )
 }

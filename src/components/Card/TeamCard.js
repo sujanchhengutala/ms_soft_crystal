@@ -50,7 +50,7 @@ const TeamCard = ({ image, title, role }) => {
             backgroundColor: "white",
             position: "absolute",
             top: "8rem",
-            left: "12rem",
+            left: "12.5rem",
             visibility: `${show}`,
             display: "flex",
             flexDirection: "column",

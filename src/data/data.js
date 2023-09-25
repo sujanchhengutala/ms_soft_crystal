@@ -173,9 +173,9 @@ export const Titem = [
   {
     icon: "/images/adobexd.png",
   },
-  {
-    icon: "/images/atom.png",
-  },
+  // {
+  //   // icon: "/images/atom.png",
+  // },
   {
     icon: "/images/js.png",
   },

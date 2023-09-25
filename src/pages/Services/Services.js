@@ -16,7 +16,7 @@ const Services = () => {
   return (
     <Layout>
 
-      <Banner title = {"Service One"} subTitle = {`Home > Service`} />
+      <Banner title = {"Service One"} />
       {serviceData.map((currElem, index)=>{
         const {image, title, description, bgColor} = currElem
         return(<>

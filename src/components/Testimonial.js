@@ -11,14 +11,13 @@ import TestimonialCard from "./Card/TestimonialCard";
 import LinearP from "./LinearP";
 
 // import Swiper core and required modules
-import SwiperCore from "swiper";
-import {
+import SwiperCore, {
   Navigation,
   Pagination,
   Autoplay,
   Scrollbar,
   A11y,
-} from "swiper/modules";
+} from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

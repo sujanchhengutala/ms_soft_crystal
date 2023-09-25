@@ -9,7 +9,7 @@ import BecomeTeam from "./BecomeTeam";
 const About = () => {
   return (
     <Layout>
-      <Banner title={"About us"} subTitle={`Home > About us`} />
+      <Banner title={"About us"}  />
       <AboutCompany />
       <OurMission />
       <Testimonial />
