@@ -2,14 +2,10 @@ import {
   Box,
   Button,
   Container,
-  // Container,
-  // Typography,
   TextField,
   Typography,
-  // Stack,
-  // Button,
+  useTheme,
 } from "@mui/material";
-//   import LinearP from "../../component/LinearP";
 import LinearP from "../../components/LinearP";
 import React, { useState } from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -17,10 +13,10 @@ import Stack from "@mui/material/Stack";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
-  // const [contact, setContact] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const theme = useTheme()
 
   return (
     <Box sx={{ width: "100%", height: {xs:"90vh", sm:"98vh", md:"99vh"} }}>
@@ -32,7 +28,7 @@ const ContactForm = () => {
               sm: "2.5rem 0 1rem 0.2rem",
               md: "4rem 0 1rem 0.2rem",
             },
-            fontSize: { xs: "20px", sm: "30px", md: "40px" },
+            fontSize: { xs: "20px", sm: "30px", md: `${theme.fontSize.titleSize}` },
             fontWeight: { xs: "700", sm: "700", md: "700" },
           }}
         >
@@ -77,7 +73,6 @@ const ContactForm = () => {
               },
               height: "80vh",
               width: { xs: "100%", sm: "100%", md: "65%" },
-              // border: "1px solid black",
               display: "flex",
               flexDirection: "column",
             }}
@@ -89,7 +84,6 @@ const ContactForm = () => {
                 id="standard-text-input"
                 label="Name"
                 type="text"
-                // autoComplete="current-password"
                 variant="standard"
                 value={name}
                 onChange={(e)=>setName(e.target.value)}
@@ -98,7 +92,6 @@ const ContactForm = () => {
                 id="standard-text-input"
                 label="Email"
                 type="text"
-                // autoComplete="current-password"
                 variant="standard"
                 value={email}
                 onChange={(e)=>setEmail(e.target.value)}
@@ -108,7 +101,6 @@ const ContactForm = () => {
                 id="standard-number-input"
                 label="Phone no"
                 type="number"
-                // autoComplete="current-password"
                 variant="standard"
                 value={phone}
                 onChange={(e)=>setPhone(e.target.value)}
@@ -119,7 +111,6 @@ const ContactForm = () => {
                 label="What would you like to know about?"
                 multiline
                 rows={4}
-                // defaultValue="Default Value"
                 variant="standard"
                 value={message}
                 onChange={(e)=>setMessage(e.target.value)}

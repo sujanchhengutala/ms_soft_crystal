@@ -2,7 +2,7 @@ import { Box, Button, Container, Typography, } from "@mui/material";
 import React from "react";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
-import { useTheme } from '@mui/material/styles';
+// import { useTheme } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ const quillStyle = {
 
 
 const ServiceList = ({ image, title, bgColor, description, dire }) => {
-    const theme = useTheme();
+    // const theme = useTheme();
     let navigate = useNavigate()
   return (
     <Box sx={{ width: "100%" }}>
@@ -48,7 +48,7 @@ const ServiceList = ({ image, title, bgColor, description, dire }) => {
               alt="alt"
               src={image}
               height={"80%"}
-              width={"80%"}
+              width={"100%"}
             />
           </Box>          
           
@@ -58,7 +58,7 @@ const ServiceList = ({ image, title, bgColor, description, dire }) => {
                 fontSize: {xs:"25px", sm:"30px", md:"35px"},
                 fontWeight: "700",
                 // p: "2rem 0 1rem 2rem",
-                p:{xs:"1.5rem 0 0rem 0.8rem", sm:"1.5rem 0 0rem 0.5rem", md:"2rem 0 1rem 2rem"}
+                p:{xs:"1.5rem 0 0rem 0.8rem", sm:"1.5rem 0 0rem 0.5rem", md:"2rem 0 1rem 1rem"}
               }}
             >
               {title}

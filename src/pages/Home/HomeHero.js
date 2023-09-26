@@ -77,7 +77,7 @@ const HomeHero = () => {
                     <Typography
                       sx={{
                         ...typography,
-                        fontSize: { xs: "26px", sm: "28px", md: "50px" },
+                        fontSize: { xs: "26px", sm: "28px", md: `${theme.fontSize.titleSize}` },
                       }}
                     >
                       We are creative IT agency
@@ -85,7 +85,7 @@ const HomeHero = () => {
                     <Typography
                       sx={{
                         ...typography,
-                        fontSize: { xs: "26px", sm: "26px", md: "50px" },
+                        fontSize: { xs: "26px", sm: "26px", md:`${theme.fontSize.titleSize}` },
                       }}
                     >
                       For your company

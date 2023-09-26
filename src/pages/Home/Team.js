@@ -45,7 +45,7 @@ const Team = () => {
               <Typography
                 sx={{
                   color: `black`,
-                  fontSize: "40px",
+                  fontSize: `${theme.fontSize.titleSize}`,
                   fontWeight: "600",
                   lineHeight: "1",
                 //   textAlign:"left"
@@ -56,7 +56,7 @@ const Team = () => {
               <Typography
                 sx={{
                   color: `black`,
-                  fontSize:"40px",
+                  fontSize:`${theme.fontSize.titleSize}`,
                   fontWeight: "600",
                   textAlign:"left"
                 }}
@@ -82,7 +82,7 @@ const Team = () => {
             </Button>
            
           </Box>
-          <LinearP align = {"left"}/>
+          <LinearP align = { "left"} />
               
           <Box sx={{width:"100%", display: {sm:"block", md:"flex", justifyContent:"center", alignItems:"center",}}}>
             {team.map((curElem) => {

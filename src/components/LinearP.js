@@ -34,7 +34,7 @@ const LinearP = ({ align }) => {
     <Box
       sx={{
         width: "100%",
-        display: "flex",
+        display: {xs:"none", md:"flex"},
         justifyContent: `${align}`,
         alignItems: `${align}`,
         mt: { xs: "0.5rem", sm: "0.5rem", md: "1rem" },

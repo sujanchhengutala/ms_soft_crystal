@@ -42,6 +42,8 @@ const DrawerComp = () => {
             // flexGrow: 1,
             bgcolor: "background.paper",
             display: "flex",
+            justifyContent:"center",
+            alignItems:"center",
             height: 224,
             width: "100%",
           }}
@@ -52,11 +54,14 @@ const DrawerComp = () => {
             indicatorColor="primary"
             onChange={(e, value) => setValue(value)}
             orientation="vertical"
+            centered
             sx={{
-              mt: "0.5rem",
+              // mt: "0.5rem",
+              // m:"auto",
               fontSize: "30px",
-              position: "relative",
-              float: "right",
+              // position: "relative",
+              // float: "right",
+              // border:"1px solid black",
               width: "100%",
             }}
           >
@@ -76,7 +81,7 @@ const DrawerComp = () => {
         </Box>
       </Drawer>
       <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-        <Typography sx={{ color: "white" }}>
+        <Typography sx={{ color: "white", fontSize:"44px" }}>
           <MenuIcon />
         </Typography>
       </IconButton>

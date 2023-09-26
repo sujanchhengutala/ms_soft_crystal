@@ -36,24 +36,15 @@ const AboutCompany = () => {
           >
             <Typography
               sx={{
-                fontSize: { xs: "30px", sm: "30px", md: "40px" },
+                fontSize: { xs: "30px", sm: "30px", md:`${theme.fontSize.titleSize}` },
                 fontWeight: "700",
                 color: "#0c5adb",
                 pt: { xs: "2rem", sm: "2rem", md: "4rem" },
               }}
             >
-              Our Story
+              Our Story begins here,
             </Typography>
-            <Typography
-              sx={{
-                fontSize: { xs: "30px", sm: "30px", md: "40px" },
-                fontWeight: "700",
-                color: "#0c5adb",
-              }}
-            >
-              {/* #d82d2b */}
-              Obegins here
-            </Typography>
+
             <Typography
               sx={{
                 fontSize: { xs: "15px", sm: "16px", md: "19px" },

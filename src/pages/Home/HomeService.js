@@ -1,7 +1,8 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography} from "@mui/material";
 import React from "react";
 import ServiceCard from "../../components/Card/ServiceCard";
 import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 const serviceData = [{
     icon:"/images/s1.png",
@@ -41,6 +42,7 @@ const serviceData = [{
 },];
 
 const HomeService = () => {
+  const theme = useTheme()
   return (
     <Box
       sx={{
@@ -52,7 +54,7 @@ const HomeService = () => {
       <Container>
         <Typography
           sx={{
-            fontSize: {xs:"25px", sm:"30px", md:"44px"},
+            fontSize: {xs:"25px", sm:"30px", md:`${theme.fontSize.titleSize}`},
             fontWeight: "700",
             textAlign: "center",
             pt: "3rem",

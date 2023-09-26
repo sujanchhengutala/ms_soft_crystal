@@ -4,12 +4,13 @@ import Home from './pages/Home/Home';
 import Services from './pages/Services/Services';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
-// import { ThemeProvider } from '@mui/material/styles';
+import {theme }from "./styles/styles"
+import { ThemeProvider } from '@mui/material/styles';
 
 
 function App() {
   return (
-    // <ThemeProvider theme={}>
+<ThemeProvider theme={theme}>
 <BrowserRouter>
 <Routes>
   <Route path='/' element={<Home />} />
@@ -19,7 +20,7 @@ function App() {
 
 </Routes>
 </BrowserRouter>
-// </ThemeProvider>
+</ThemeProvider>
   );
 }
 

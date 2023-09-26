@@ -14,7 +14,7 @@ const WorkingProcess = () => {
     <Box sx={{width:"100%", height:{xs:"41vh",sm:"50vh", md:"75vh", backgroundColor:"#ffffff"}}}>
          <Container fixed>
     <Typography sx={{color:"#0c5adb", textAlign:"center", fontSize:"16px", fontWeight:"600", letterSpacing:"4px", pt:{xs:"3rem", sm:"3rem", md:"5rem"},}}>PROCESS</Typography>
-    <Typography sx={{textAlign:"center", fontSize:{xs:"20", sm:"25", md:"44px"}, fontWeight:"600", pt:"0.5rem"}}>Our Working Process</Typography>
+    <Typography sx={{textAlign:"center", fontSize:{xs:"20", sm:"25", md:`${theme.fontSize.titleSize}`}, fontWeight:"600", pt:"0.5rem"}}>Our Working Process</Typography>
       <LinearP align={"center"}/>
             <Box sx={{width:"80%",m:"auto", display:"flex", justifyContent:"space-around"}}>
             <Circle number={1} />
@@ -37,7 +37,7 @@ const WorkingProcess = () => {
       <>
 <Box sx={{width:"20rem",height:"20rem",}}>
   <Typography sx={{fontSize:"13px",fontWeight:"600", textAlign:"center"}}>{title}</Typography>
-  <Typography sx={{textAlign:"center", color:`gray`, fontSize:"18px", display:{xs:"none", md:"inherit"}}}>{description}</Typography>
+  <Typography sx={{textAlign:"center", color:`gray`, fontSize:`${theme.fontSize.pText}`, display:{xs:"none", md:"inherit"}}}>{description}</Typography>
 
   </Box>
       </>

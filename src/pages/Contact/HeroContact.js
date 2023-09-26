@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Divider, Typography } from "@mui/material";
+import { useTheme } from "@emotion/react";
 
 const contactData = [{
     icon:"/images/headset.png",
@@ -21,6 +22,7 @@ const contactData = [{
 }, ]
 
 const HeroContact = () => {
+  const theme = useTheme()
   return (
     <Container fixed>
       <Box
@@ -40,7 +42,7 @@ const HeroContact = () => {
         >
           <Typography
             sx={{
-              fontSize: { xs: "25px", sm: "30px", md: "40px" },
+              fontSize: { xs: "25px", sm: "30px", md: `${theme.fontSize.titleSize}` },
               fontWeight: "700",
               p: { xs: "1rem 0 0 0 ", sm: "1rem 0 0 0", md: "5rem 0 0 4rem" },
             }}

@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Link, Typography } from "@mui/material";
+import { Box, Container, Divider, Typography } from "@mui/material";
 import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -10,6 +10,7 @@ import MarkunreadIcon from "@mui/icons-material/Markunread";
 import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { useNavigate } from "react-router-dom";
+import { useTheme } from '@mui/material/styles';
 
 const contactinfo = [
   {
@@ -74,16 +75,16 @@ const quickLink = [
 
 const Footer = () => {
   let navigate = useNavigate();
+  const theme = useTheme()
+  console.log(theme)
 
   return (
-    // <Box sx={{position:"relative"}}>
     <Box
       sx={{
         height: { xs: "110vh", sm: "115vh", md: "60vh" },
         width: "100%",
         margin: "0",
-        background:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgb(5 5 37) 0%)"
-          // "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%)",
+        background:`${theme.color.bgColor}`
       }}
     >
       <Container fixed>
@@ -99,8 +100,6 @@ const Footer = () => {
           <Box
             sx={{
               width: { xs: "100%", sm: "100%", md: "34%" },
-              // height: "40vh",
-              // border: "1px solid white",
               mt: "4rem",
             }}
           >
@@ -133,10 +132,8 @@ const Footer = () => {
             <Box
               sx={{
                 display: "flex",
-                // justifyContent: "space-around",
                 gap: "0.5rem",
                 color: "#ffffff",
-                // border:"1px solid red"
               }}
             >
               {icon.map((curElem) => {
@@ -156,11 +153,10 @@ const Footer = () => {
                         borderRadius: "5px",
                         cursor:"pointer"
                       }}
-
                       target="_blank"
                     >
                   
-                      <a href={`${path}`} target="_blank" style={{color:"white"}}>
+                      <a href={`${path}`} target="_blank" rel="noreferrer" style={{color:"white"}}>
                       {name}
                       </ a>
                     </Typography>
@@ -177,7 +173,6 @@ const Footer = () => {
           >
             <Typography
               sx={{
-                // textAlign: "center",
                 fontSize: "20px",
                 fontWeight: "700",
                 color: "#FFFFFF",

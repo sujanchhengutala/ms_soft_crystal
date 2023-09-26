@@ -6,6 +6,7 @@ import {
   useTheme,
 } from "@mui/material";
 import React from "react";
+// import {useTheme} from "@mui/material/styles"
 
 import TestimonialCard from "./Card/TestimonialCard";
 import LinearP from "./LinearP";
@@ -108,7 +109,7 @@ const Testimonial = () => {
         <Typography
           sx={{
             textAlign: "center",
-            fontSize: { xs: "20px", sm: "30px", md: "44px" },
+            fontSize: { xs: "20px", sm: "30px", md: `${theme.fontSize.titleSize}` },
             fontWeight: "600",
             pt: "0.5rem",
           }}
@@ -118,7 +119,7 @@ const Testimonial = () => {
         <Typography
           sx={{
             textAlign: "center",
-            fontSize: { xs: "20px", sm: "30px", md: "44px" },
+            fontSize: { xs: "20px", sm: "30px", md: `${theme.fontSize.titleSize}` },
             fontWeight: "600",
           }}
         >

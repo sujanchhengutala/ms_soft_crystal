@@ -35,7 +35,7 @@ const Header = () => {
           component={"nav"}
           sx={{
             height: "6rem",
-            background:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgb(5 5 37) 0%)"
+            background:`${theme.color.bgColor}`
               // "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%)",
           }}
         >
